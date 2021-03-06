@@ -13,7 +13,7 @@
   rostopic type [topic]
   rostopic type /turtle1/cmd_vel
   ```
-  and it will return the msg type like:
+  and it will return the msg type for example:
   ```console
   geometry_msgs/Twist
   ```
