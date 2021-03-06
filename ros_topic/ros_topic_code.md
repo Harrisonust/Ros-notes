@@ -1,4 +1,4 @@
-### Code notes
+## Code notes
 The current workspace structure:
 ```console
 workspace_folder/        -- WORKSPACE
@@ -18,7 +18,7 @@ Now we do:
 $ mkdir ~/workspace_folder/src/package_1/src 
 ```
 and from now on we do all the source codes in that folder.  
-#### Writing a Simple Publisher and Subscriber (C++)
+### Writing a Simple Publisher and Subscriber (C++)
 talker.cpp:
 ``` cpp
 #include "ros/ros.h"
@@ -120,7 +120,7 @@ $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-#### Writing a Simple Publisher and Subscriber (Python)
+### Writing a Simple Publisher and Subscriber (Python)
 
 talker.py:
 ```python
@@ -169,7 +169,7 @@ $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-#### Examining the Simple Publisher and Subscriber
+### Examining the Simple Publisher and Subscriber
 
 ```console
 $ roscore //make sure roscore(master node ) is running
@@ -192,7 +192,7 @@ and you will see the output:
 
 to receive msg from talkers, we run listerners by following command:
 ```console
-& rosrun beginner_tutorials listener     # (C++)
+$ rosrun beginner_tutorials listener     # (C++)
 $ rosrun beginner_tutorials listener.py  # (Python) 
 ```
 
