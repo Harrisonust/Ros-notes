@@ -27,7 +27,11 @@
 	```console 
 	$ rospack find [package name]
 	```
-	return the path of the package. ex: opt/ros/noetic/share/roscpp
+	```console 
+	ex: opt/ros/noetic/share/roscpp
+	```
+	return the path of the package. 
+	
    
 - **Change dir**
     ```console
@@ -69,7 +73,7 @@
 	```
 
 ### Package.xml
-```console
+```xml
 <?xml version="1.0"?>
 <package format="2">
 	<name>beginner_tutorials</name>
