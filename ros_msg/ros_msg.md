@@ -1,4 +1,4 @@
-## Ros self-defined message notes
+## Ros self-defined message
 ### Common cmd for msg and srv
 ```console
 $rosmsg show <package_name>/<msg_name>
