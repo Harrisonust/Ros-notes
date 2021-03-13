@@ -120,9 +120,9 @@ TODO
 - ```rosrun rqt_graph rqt_graph```: Print out the node graph
 	
 
-## CMakeLists.txt
+## CMakeLists
 TODO
-## Package.xml
+## PackageXml
 ```xml
 <?xml version="1.0"?>
 <package format="2">
