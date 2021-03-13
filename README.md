@@ -12,8 +12,8 @@ This is my note
         5. Master
         6. Server
         7. Other
-    4. [CMakeLists.txt](./ros_basic/ros_basic.md#CMakeLists.txt)
-    5. [Package.xml](./ros_basic/ros_basic.md#Package.xml)
+    4. [CMakeLists.txt](./ros_basic/ros_basic.md#CMakeLists-txt)
+    5. [Package.xml](./ros_basic/ros_basic.md#Package-xml)
 
 2. [Topic](./ros_topic/ros_topic.md)
 3. [Service](./ros_service/ros_service.md)
