@@ -17,4 +17,4 @@ This is my note
 
 2. [Topic](./ros_topic/ros_topic.md)
 3. [Service](./ros_service/ros_service.md)
-4. [Self-defined message](./ros_msg/ros_msg.md)
+4. [Custom message](./ros_msg/ros_msg.md)

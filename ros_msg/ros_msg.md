@@ -1,12 +1,8 @@
-## Ros self-defined message
-### Common cmd for msg and srv
-```console
-$rosmsg show <package_name>/<msg_name>
-$rosmsg info <package_name>/<msg_name>
-$rossrv show <package_name>/<srv_name>
-$rossrv info <package_name>/<srv_name>
-```
-### .msg file
+# Ros custom message
+## Custom message
+TODO
+
+## .msg file
 first we create a folder for msg structure
 ```console 
 $ roscd beginner_tutorials
@@ -89,7 +85,7 @@ usage:
     msg = my_msg()
     ```
 
-### .srv file
+## .srv file
 similarly we create a folder for srv structure
 
 ```console

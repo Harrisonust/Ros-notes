@@ -1,40 +1,8 @@
 		
-## Ros "topic"
-- **Get msg from specific topics by cmd**
-	```console
-	$ rostopic echo [topic]
-	```
-	
-- **Get info of specific topic**
-	use the command:
-	```console 
-	$ rostopic type [topic]
-	$ rostopic type /turtle1/cmd_vel
-	```
-	and it will return the msg type for example:
-	```console
-	geometry_msgs/Twist
-	```
-	Further more if run command:
-	```console
-	$ rosmsg show geometry_msgs/Twist
-	```
-	```console
-	geometry_msgs/Vector3 linear
-		float64 x
-		float64 y
-		float64 z
-	geometry_msgs/Vector3 angular
-		float64 x
-		float64 y
-		float64 z
-	```
-- **Directly public messages to specific topics**
-	```console
-	$ rostopic pub [topic] [msg_type] [args]
-	$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
-    ```
-### Prepare
+# Ros "topic"
+## What is "Topic" in Ros
+TODO
+## Prepare
 The current workspace structure:
 ```console
 workspace_folder/        -- WORKSPACE
@@ -54,7 +22,7 @@ Now we do:
 $ cd ~/catkin/src/package_1/src 
 ```
 and from now on we do all the source codes in that folder.  
-### Writing a Simple Publisher and Subscriber (C++)
+## Writing a Simple Publisher and Subscriber (C++)
 talker.cpp:
 ``` cpp
 #include "ros/ros.h"
@@ -156,7 +124,7 @@ $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-### Writing a Simple Publisher and Subscriber (Python)
+## Writing a Simple Publisher and Subscriber (Python)
 
 talker.py:
 ```python
@@ -205,7 +173,7 @@ $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-### Examining the Simple Publisher and Subscriber
+## Examining the Simple Publisher and Subscriber
 
 ```console
 $ roscore //make sure roscore(master node ) is running
