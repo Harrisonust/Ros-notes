@@ -1,78 +1,128 @@
+# ROS BASIC
 
-### Ros Structure
+## What is ROS
+TODO
+## Ros Workspace Structure
+
 ```console
-  workspace_folder/        -- WORKSPACE
-      src/                   -- SOURCE SPACE
-        CMakeLists.txt       -- 'Toplevel' CMake file, provided by catkin
-        package_1/
-          CMakeLists.txt     -- CMakeLists.txt file for package_1
-          package.xml        -- Package manifest for package_1
-        ...
-        package_n/
-          CMakeLists.txt     -- CMakeLists.txt file for package_n
-          package.xml        -- Package manifest for package_n
-```
-### Ros Common Command
-- **Create ros package** 
-	cmd: catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
-	```console
-	 $ catkin_create_pkg beginner_tutorials std_msgs rospy roscpp 
-	 ```
-- **Configure workspace**
-    ```console
-	$ cd ~/catkin_ws
-	$ catkin_make
-	```
-- **Find package**
-	```console 
-	$ rospack find [package name]
-	```
-	```console 
-	ex: opt/ros/noetic/share/roscpp
-	```
-	return the path of the package. 
-	
-   
-- **Change dir**
-    ```console
-	$ roscd [locationname[/subdir]] 
-	```
-   
-- **List all ros package path**  
-    ```console
-    $ echo $ROS_PACKAGE_PATH
-    ```
-   
-- **Ros ls**
-    ```console 
-	$ rosls [locationname[/subdir]] 
-	```
-    list all the folders/files under the location
- 
-- **List ros package  depends**
-	```console
-	$ rospack depends1 beginner_tutorials
-	```
-	```console
-	   std_msgs
-	   rospy
-	   roscpp
-	```
-- **List ros nodes**
-	```console
-	$ rosnode list
-	```
-		
-- **Run ros nodes from cmd**
-	```console
-	rosrun [package_name] [node_name]
-	```
-- **Print out the node graph**
-	```console
-	rosrun rqt_graph rqt_graph
-	```
+~/catkin_ws/			-- WORKSPACE
+└── src				-- SOURCE SPACE
+    ├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake 
+	 			-- 'Toplevel' CMake file, provided by catkin
+    ├── beginner_tutorials
+    │   ├── CMakeLists.txt	-- CMakeLists.txt file for package_1
+    │   ├── include
+    │   ├── package.xml		-- Package manifest for package_1
+    │   └── src
+	....
+    └── package_n
+        ├── CMakeLists.txt	-- CMakeLists.txt file for package_n
+        ├── include
+        ├── package.xml		-- Package manifest for package_n
+        └── src
 
-### Package.xml
+```
+
+## Ros command 
+### Node
+
+- ```rosnode info <node_name>```：用于输出当前节点信息。
+
+- ```rosnode kill <node_name>```：用于杀死正在运行节点进程来结束节点的运行。
+
+- ```rosnode list```：用于列出当前活动的节点。
+
+- ```rosnode machine <hostname>```：用于列出指定计算机上运行的节点。
+
+- ```rosnode ping <node_name>```：用于测试节点间的网络连通性。
+
+- ```rosnode cleanup```：用于将无法访问节点的注册信息清除。
+
+### Message
+
+- ```rosmsg show <message_type>```：用于显示一条消息的字段。
+
+- ```rosmsg list```：用于列出所有消息。
+
+- ```rosmsg package <package _name>```：用于列出功能包的所有消息。
+
+- ```rosmsg packages```：用于列出所有具有该消息的功能包。
+
+- ```rosmsg users <message_type>```：用于搜索使用该消息类型的代码文件。
+
+- ```rosmsg md5 <message_type>```：用于显示一条消息的MD5求和结果。
+
+### Topic
+
+- ``` rostopic bw </topic_name>```：用于显示主题所使用的带宽。
+
+- ```rostopic echo </topic_name>```：用于将主题中的消息数据输出到屏幕。
+
+- ```rostopic find <message_type>```：用于按照消息类型查找主题。
+
+- ```rostopic hz </topic_name>```：用于显示主题的发布频率。
+
+- ```rostopic info </topic_name>```：用于输出活动主题、发布的主题、主题订阅者和服务的信息。
+
+- ```rostopic list```：用于列出当前活动主题的列表。
+
+- ```rostopic pub </topic_name> <message_type> <args>```：用于通过命令行将数据发布到主题。
+
+- ```rostopic type </topic_name>```：用于输出主题中发布的消息类型。
+
+### Service
+
+- ```rosservice call </service_name> <args>```：用于通过命令行参数调用服务。
+
+- ```rosservice find <service_type>```：用于根据服务类型查询服务。
+
+- ```rosservice info </service_name>```：用于输出服务信息。
+
+- ```rosservice list```：用于列出活动服务清单。
+
+- ```rosservice type </service_name>```：用于输出服务类型。
+
+- ```rosservice uri </service_name>```：用于输出服务的ROSRPC URI。
+
+### Master
+- ```roscore```：用于启动节点管理器，这个命令会加载ROS节点管理器和其他ROS核心组件。
+
+### Server
+
+- ```rosparam list```：用于列出参数服务器中的所有参数。
+
+- ```rosparam get <parameter_name>```：用于获取参数服务器中的参数值。
+
+- ```rosparam set <parameter_name> <value>```：用于设置参数服务器中参数的值。
+
+- ```rosparam delete <parameter_name>```：用于将参数从参数服务器中删除。
+
+- ```rosparam dump <file>```：用于将参数服务器的参数保存到一个文件。
+
+- ```rosparam load <file>```：用于从文件将参数加载到参数服务器。
+### Other
+- ```catkin_create_pkg <package_name> [depend1] [depend2] [depend3]```
+- ``` cd ~/catkin_ws && catkin_make ```: Configure workspace
+- ```rospack find [package name]```: Return the path of the package. 
+	   
+-  ```roscd [locationname[/subdir]] ```
+   
+- ```echo $ROS_PACKAGE_PATH``` 
+   
+-  ``` rosls [locationname[/subdir]] ```: list all the folders/files under the location
+ 
+- ```rospack depends1 beginner_tutorials```: List ros package  depends
+
+
+		
+- ```rosrun [package_name] [node_name]```: Run ros nodes from cmd
+	
+- ```rosrun rqt_graph rqt_graph```: Print out the node graph
+	
+
+## CMakeLists.txt
+TODO
+## Package.xml
 ```xml
 <?xml version="1.0"?>
 <package format="2">
@@ -92,3 +142,4 @@
 	<exec_depend>std_msgs</exec_depend>
 </package>
 ```
+

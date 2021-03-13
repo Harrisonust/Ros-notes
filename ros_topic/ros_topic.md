@@ -51,7 +51,7 @@ workspace_folder/        -- WORKSPACE
 
 Now we do:
 ```console
-$ mkdir ~/workspace_folder/src/package_1/src 
+$ cd ~/catkin/src/package_1/src 
 ```
 and from now on we do all the source codes in that folder.  
 ### Writing a Simple Publisher and Subscriber (C++)
@@ -117,7 +117,7 @@ int main(int argc, char **argv){
     return 0;
 }
 ```
-CMakeLists.txt:
+package/CMakeLists.txt:
 ```cmake
 cmake_minimum_required(VERSION 2.8.3)
 project(beginner_tutorials)
@@ -140,15 +140,15 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
-add_dependencies(talker beginner_tutorials_generate_messages_cpp)
+## add_dependencies(talker beginner_tutorials_generate_messages_cpp)
 
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
-add_dependencies(listener beginner_tutorials_generate_messages_cpp)
+## add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 
-catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+## catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
+##   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+## )
 ```
 Remember to do the following cmds after finishing CMakeLists.txt
 ```console 
