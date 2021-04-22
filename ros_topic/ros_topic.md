@@ -4,25 +4,31 @@
 TODO
 ## Prepare
 The current workspace structure:
-```console
-workspace_folder/        -- WORKSPACE
-    src/                   -- SOURCE SPACE
-        CMakeLists.txt       -- 'Toplevel' CMake file, provided by catkin
-        package_1/
-            CMakeLists.txt     -- CMakeLists.txt file for package_1
-            package.xml        -- Package manifest for package_1
-        ...
-        package_n/
-            CMakeLists.txt     -- CMakeLists.txt file for package_n
-            package.xml        -- Package manifest for package_n
-```    
+```
+~/catkin_ws/			-- WORKSPACE
+└── src				-- SOURCE SPACE
+    ├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake 
+	 			-- 'Toplevel' CMake file, provided by catkin
+    ├── beginner_tutorials
+    │   ├── CMakeLists.txt	-- CMakeLists.txt file for package_1
+    │   ├── include
+    │   ├── package.xml		-- Package manifest for package_1
+    │   └── src
+	....
+    └── package_n
+        ├── CMakeLists.txt	-- CMakeLists.txt file for package_n
+        ├── include
+        ├── package.xml		-- Package manifest for package_n
+        └── src
+
+```
 
 Now we do:
-```console
-$ cd ~/catkin/src/package_1/src 
+```bash
+$ cd ~/catkin_ws/src/package_1/src 
 ```
-and from now on we do all the source codes in that folder.  
-## Writing a Simple Publisher and Subscriber (C++)
+and from now on we write all the source codes in that folder.  
+## Publisher and Subscriber (C++)
 talker.cpp:
 ``` cpp
 #include "ros/ros.h"
@@ -118,13 +124,13 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 ##   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 ## )
 ```
-Remember to do the following cmds after finishing CMakeLists.txt
-```console 
+Remember to run ```catkin_make``` after finishing the CMakeLists.txt
+```bash 
 $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-## Writing a Simple Publisher and Subscriber (Python)
+## Publisher and Subscriber (Python)
 
 talker.py:
 ```python
@@ -167,25 +173,25 @@ def listener():
 if __name__ == '__main__':
     listener()
 ```
-remember also do cmake even tho we using python(ros is based on cmake)
-```console 
+remember also run catkin_make even we are using python
+```bash 
 $ cd ~/catkin_ws
 $ catkin_make
 ```
 
-## Examining the Simple Publisher and Subscriber
+## Examining Publishers and Subscribers
 
-```console
+```bash
 $ roscore //make sure roscore(master node ) is running
 $ source ~/catkin_ws/devel/setup.bash
 ```
 to run talkers, use the following command:
-```console
+```bash
 $ rosrun beginner_tutorials talker      # (C++)
 $ rosrun beginner_tutorials talker.py   # (Python)
 ```
 and you will see the output:
-```console
+```bash
   [INFO] [WallTime: 1314931831.774057] hello world 1314931831.77
   [INFO] [WallTime: 1314931832.775497] hello world 1314931832.77
   [INFO] [WallTime: 1314931833.778937] hello world 1314931833.78
@@ -195,13 +201,13 @@ and you will see the output:
 ```
 
 to receive msg from talkers, we run listerners by following command:
-```console
+```bash
 $ rosrun beginner_tutorials listener     # (C++)
 $ rosrun beginner_tutorials listener.py  # (Python) 
 ```
 
 and you will see it is receiving msg from the talkers correctly:
-```console 
+```bash 
   [INFO] [WallTime: 1314931969.258941] /listener_17657_1314931968795I heard hello world 1314931969.26
   [INFO] [WallTime: 1314931970.262246] /listener_17657_1314931968795I heard hello world 1314931970.26
   [INFO] [WallTime: 1314931971.266348] /listener_17657_1314931968795I heard hello world 1314931971.26

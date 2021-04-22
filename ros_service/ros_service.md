@@ -2,8 +2,8 @@
 ## What is "Service" in Ros
 TODO
 
-## Make simple ros service(C++)
-First of all you need to open a package of ~/catkin_ws/src/beginner_tutorials/src/add_two_ints_server.cpp
+## Ros service(C++)
+In ```~/catkin_ws/src/beginner_tutorials/src/add_two_ints_server.cpp```
 
 add_two_ints_server.cpp:
 ```c++
@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 }
 ```
 
-## Make simple ros client(C++)
+## Ros client(C++)
 
 add_two_ints_client.cpp:
 ```cpp
@@ -74,11 +74,11 @@ target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 add_dependencies(add_two_ints_client beginner_tutorials_gencpp)
 ```
 
-```console
+```bash
 $ cd ~/catkin_ws
 $ catkin_make
 ```
-## Make simple ros service(python)
+## Ros service(python)
 
 add_two_ints_server.py:
 ```python
@@ -101,7 +101,7 @@ def add_two_ints_server():
 if __name__ == "__main__":
     add_two_ints_server()
 ```
-## Make simple ros client(python)
+## Ros client(python)
 add_two_ints_client.py:
 ```python
 #!/usr/bin/env python
@@ -142,21 +142,21 @@ catkin_install_python(PROGRAMS scripts/add_two_ints_server.py scripts/add_two_in
 )
 ```
 
-## Examining the Simple Service and Client
+## Examining Services and Clients
 
 First we run:
-```console 
+```bash 
 $ rosrun beginner_tutorials add_two_ints_server     # (C++)
 $ rosrun beginner_tutorials add_two_ints_server.py  # (Python)
 ```
 
 and run:
-```console
+```bash
 $ rosrun beginner_tutorials add_two_ints_client 1 3     # (C++)
 $ rosrun beginner_tutorials add_two_ints_client.py 1 3  # (Python)
 ```
 you will see 
-```console 
+```bash 
   Requesting 1+3
   1 + 3 = 4
 ```

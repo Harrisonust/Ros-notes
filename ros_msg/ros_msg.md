@@ -1,18 +1,34 @@
 # Ros custom message
 ## Custom message
-TODO
+|  Primitive Type   | C++ | Python |
+|  ---------------  | --- | ------ |
+| bool  | uint8_t | bool |
+| uint32  | uint32_t | int |
+| int32  | int32_t | int |
+| float32  | float | float |
+| string  | std::string | str |
+| time  |  ||
+| duration  |  ||
+
 
 ## .msg file
-first we create a folder for msg structure
-```console 
-$ roscd beginner_tutorials
-$ mkdir msg
-$ cd msg
-$ vim my_msg.msg
+First we create a folder for message.
+```
+~/catkin_ws/			
+└── src				
+    ├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake 
+    ├── beginner_tutorials
+    │   ├── CMakeLists.txt
+    │   ├── include
+    │   ├── package.xml		
+    │   ├── msg		
+    │   │   ├── my_msg.msg		
+    │   ├── src		
+    │   └── srv
 ```
 
 ```console
-// ros_primitive_type
+// my_msg.msg
 int64 id
 string title
 string content
@@ -50,8 +66,8 @@ generate_messages(
   std_msgs
 )
 ```
-```console
-$ catkin_make
+```bash
+$ catkin_make  # remember to run catkin_make in /catkin_ws to build the message
 ```
 
 usage:
