@@ -26,11 +26,11 @@ TODO
 ## Ros command 
 
 ### Master
-- ```roscore``` : 用于启动节点管理器，这个命令会加载ROS节点管理器和其他ROS核心组件。
+- ```roscore``` : Launch node manager. This command also launch other core pakcages.
 
 ### Node
 
-- ```rosnode info <node_name>``` : Print out detial infomation for a node.
+- ```rosnode info <node_name>``` : Print out detial infomation of a node.
 
 - ```rosnode kill <node_name>``` : Kill a running node.
 
@@ -40,23 +40,23 @@ TODO
 
 - ```rosnode ping <node_name>``` : Test ping of a node.
 
-- ```rosnode cleanup``` : 用于将无法访问节点的注册信息清除。
+- ```rosnode cleanup``` : Clear register status of unreachable nodes.
 
 ### Topic
 
-- ``` rostopic bw </topic_name>``` : 用于显示主题所使用的带宽。
+- ``` rostopic bw </topic_name>``` : Show bandwidth of a topic.
 
-- ```rostopic echo </topic_name>``` : 用于将主题中的消息数据输出到屏幕。
+- ```rostopic echo </topic_name>``` : Echo datas from a topic.
 
 - ```rostopic find <message_type>``` : 用于按照消息类型查找主题。
 
-- ```rostopic hz </topic_name>``` : 用于显示主题的发布频率。
+- ```rostopic hz </topic_name>``` : Show publish freqency of a topic.
 
-- ```rostopic info </topic_name>``` : 用于输出活动主题、发布的主题、主题订阅者和服务的信息。
+- ```rostopic info </topic_name>``` : Show Subscribers/Publishers/Services of a topic.
 
-- ```rostopic list``` : 用于列出当前活动主题的列表。
+- ```rostopic list``` : Show active topics.
 
-- ```rostopic pub </topic_name> <message_type> <args>``` : 用于通过命令行将数据发布到主题。
+- ```rostopic pub </topic_name> <message_type> <args>``` : Publish data through command to topics.
 
 - ```rostopic type </topic_name>``` : 用于输出主题中发布的消息类型。
 
@@ -64,9 +64,9 @@ TODO
 
 - ```rosmsg show <message_type>``` : 用于显示一条消息的字段。 
 
-- ```rosmsg list``` : 用于列出所有消息。
+- ```rosmsg list``` : List all the messages.用于列出所有消息。
 
-- ```rosmsg package <package _name>``` : 用于列出功能包的所有消息。
+- ```rosmsg package <package_name>``` : 用于列出功能包的所有消息。
 
 - ```rosmsg packages``` : 用于列出所有具有该消息的功能包。
 
