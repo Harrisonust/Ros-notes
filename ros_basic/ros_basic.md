@@ -150,7 +150,5 @@ TODO
 - ```echo $ROS_PACKAGE_PATH```    
 -  ``` rosls [locationname[/subdir]] ```: List all the folders/files under the location
 - ```rospack depends1 beginner_tutorials```: List ros package  depends
-
-		
 - ```rosrun [package_name] [node_name]```: Run ros nodes from cmd	
 - ```rosrun rqt_graph rqt_graph```: Print out the node graph
