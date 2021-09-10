@@ -132,6 +132,34 @@ Read more on the ROS website for that stuff, only important basics will be cover
 ## CMakeLists
 TODO
 ## PackageXml
+
+### Description tag
+```xml
+<description>The beginner_tutorials package</description>
+```
+
+### Maintainer tag 
+```xml
+<maintainer email="harrison@todo.todo">harrison</maintainer>
+```
+
+### license tag
+```xml
+<license>BSD</license>
+```
+
+### dependency tag
+```xml
+<buildtool_depend>catkin</buildtool_depend>
+<build_depend>roscpp</build_depend>
+<build_depend>rospy</build_depend>
+<build_depend>std_msgs</build_depend>
+<exec_depend>roscpp</exec_depend>
+<exec_depend>rospy</exec_depend>
+<exec_depend>std_msgs</exec_depend>
+```
+
+### whole view
 ```xml
 <?xml version="1.0"?>
 <package format="2">
