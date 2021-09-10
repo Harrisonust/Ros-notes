@@ -30,6 +30,73 @@ Read more on the ROS website for that stuff, only important basics will be cover
 ```
 
 ## Ros command 
+Note that roscd, like other ROS tools, will only find ROS packages that are within the directories listed in your ROS_PACKAGE_PATH. 
+```terminal
+$ echo $ROS_PACKAGE_PATH
+```
+
+## Package
+* Packages: Packages are the software organization unit of ROS code. Each package can contain libraries, executables, scripts, or other artifacts.
+* Manifests (package.xml): A manifest is a description of a package. It serves to define dependencies between packages and to capture meta information about the package like version, maintainer, license, etc...
+* Creating a ros package ```catkin_create_pkg <package_name> [depend1] [depend2] [depend3]...```
+## roscd rosls rospack
+* roscd [package]
+* roscd [package]
+* rospack find [package]	
+
+## CMakeLists
+TODO
+## PackageXml
+
+### Description tag
+```xml
+<description>The beginner_tutorials package</description>
+```
+
+### Maintainer tag 
+```xml
+<maintainer email="harrison@todo.todo">harrison</maintainer>
+```
+
+### license tag
+```xml
+<license>BSD</license>
+```
+
+### dependency tag
+```xml
+<buildtool_depend>catkin</buildtool_depend>
+<build_depend>roscpp</build_depend>
+<build_depend>rospy</build_depend>
+<build_depend>std_msgs</build_depend>
+<exec_depend>roscpp</exec_depend>
+<exec_depend>rospy</exec_depend>
+<exec_depend>std_msgs</exec_depend>
+```
+
+### whole view
+```xml
+<?xml version="1.0"?>
+<package format="2">
+	<name>beginner_tutorials</name>
+	<version>0.1.0</version>
+	<description>The beginner_tutorials package</description>
+	<maintainer email="you@yourdomain.tld">Your Name</maintainer>
+	<license>BSD</license>
+	<url type="website">http://wiki.ros.org/beginner_tutorials</url>
+	<author email="you@yourdomain.tld">Jane Doe</author>
+	
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>roscpp</build_depend>
+	<build_depend>rospy</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<exec_depend>roscpp</exec_depend>
+	<exec_depend>rospy</exec_depend>
+	<exec_depend>std_msgs</exec_depend>
+</package>
+```
+
+## More Ros commands
 
 ### Master
 - ```roscore``` : Launch node manager. This command also launch other core pakcages.
@@ -127,56 +194,3 @@ Read more on the ROS website for that stuff, only important basics will be cover
 - ```rosrun [package_name] [node_name]```: Run ros nodes from cmd
 	
 - ```rosrun rqt_graph rqt_graph```: Print out the node graph
-	
-
-## CMakeLists
-TODO
-## PackageXml
-
-### Description tag
-```xml
-<description>The beginner_tutorials package</description>
-```
-
-### Maintainer tag 
-```xml
-<maintainer email="harrison@todo.todo">harrison</maintainer>
-```
-
-### license tag
-```xml
-<license>BSD</license>
-```
-
-### dependency tag
-```xml
-<buildtool_depend>catkin</buildtool_depend>
-<build_depend>roscpp</build_depend>
-<build_depend>rospy</build_depend>
-<build_depend>std_msgs</build_depend>
-<exec_depend>roscpp</exec_depend>
-<exec_depend>rospy</exec_depend>
-<exec_depend>std_msgs</exec_depend>
-```
-
-### whole view
-```xml
-<?xml version="1.0"?>
-<package format="2">
-	<name>beginner_tutorials</name>
-	<version>0.1.0</version>
-	<description>The beginner_tutorials package</description>
-	<maintainer email="you@yourdomain.tld">Your Name</maintainer>
-	<license>BSD</license>
-	<url type="website">http://wiki.ros.org/beginner_tutorials</url>
-	<author email="you@yourdomain.tld">Jane Doe</author>
-	<buildtool_depend>catkin</buildtool_depend>
-	<build_depend>roscpp</build_depend>
-	<build_depend>rospy</build_depend>
-	<build_depend>std_msgs</build_depend>
-	<exec_depend>roscpp</exec_depend>
-	<exec_depend>rospy</exec_depend>
-	<exec_depend>std_msgs</exec_depend>
-</package>
-```
-
