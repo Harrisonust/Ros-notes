@@ -1,7 +1,11 @@
 		
 # Ros "topic"
 ## What is "Topic" in Ros
-TODO
+is like a subreddit, it's a place where nodes can publish new data, and subscribe to recieve data published by others.
+
+- This includes everything from positioning estimates to lidar scans or camera images.
+- A topic has a name so that nodes can refer to it. A node will usually have a default name for any data it publishes/subscribes, and either use launch arguments to customize the name, or ROS supports redirection by adding certain command line arguments.
+- A ROS topic will usually have a specific datatype, but only by convention, technically nothing enforces this.
 ## Prepare
 The current workspace structure:
 ```

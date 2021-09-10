@@ -1,5 +1,9 @@
 # Ros custom message
-## Custom message
+## ROS message
+is some data with a certain datatype that is sent and received between nodes through topics.
+
+- ROS has a fuckton of builtin datatypes for certain things like position (PoseEstimate), lidar scans, etc.
+## Primitive message types
 |  Primitive Type   | C++ | Python |
 |  ---------------  | --- | ------ |
 | bool  | uint8_t | bool |

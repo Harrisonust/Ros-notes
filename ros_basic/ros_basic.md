@@ -1,7 +1,13 @@
 # ROS BASIC
 
 ## What is ROS
-TODO
+It's a system that runs on top of Ubuntu to help make robots.
+
+The core of ROS is the inter-process communication system. This allows robots to be composed of many independent programs that communicate through a standard interface with standard types.
+
+Unless you're doing something very novel, most of robotics with ROS is just finding nodes that do what you need to do and plugging them together, another section will show you what nodes I've found that are useful.
+
+Read more on the ROS website for that stuff, only important basics will be covered here, if any word or technique is not explained enough that you don't know how to use it then just google it.
 ## Ros Workspace Structure
 
 ```
